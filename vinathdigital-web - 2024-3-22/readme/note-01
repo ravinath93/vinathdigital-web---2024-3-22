@@ -1,0 +1,63 @@
+/* desktop size ###  */
+p >
+color: #CCCACA;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 23px; /* 127.778% */
+
+oswald h1 >
+color: #F8CE1A;
+font-family: Oswald;
+font-size: 70px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+
+oswald h3 >
+color: #FDFDFD;
+font-family: Oswald;
+font-size: 40px;
+font-style: regular;
+font-weight: 400;
+line-height: normal;
+
+/* 450 mobile size ####  */
+.hero-container-left h1{
+  font-size: 40px;
+  line-height:  45px;
+}
+.hero-container-left h3{
+  font-size: 30px;
+  line-height:  35px;
+}
+
+.hero-container-left p{
+  font-size: 16px;
+}
+
+.hero-container-left button{ 
+  font-size: 18px;
+ }
+ 
+
+
+/* ! image path importnt #####  */
+background-image: linear-gradient(rgba(4,9,30,0),rgba(4,9,30,0)), url(/images/homepage.png); 
+
+
+
+###############################################################################
+
+images\pro-1.jpg
+
+#################################################################################
+
+
+
+
+
+
+
+

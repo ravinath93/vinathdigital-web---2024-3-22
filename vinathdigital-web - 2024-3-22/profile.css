@@ -1,0 +1,878 @@
+
+/* global style ########### */
+
+/* Font --------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* variable --------- */
+:root{
+  --main-color:#F8CE1A;
+}
+
+/* Global --------- */
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: white;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+  line-height: 1.5;
+}
+
+/* Global --------- */
+html {
+  font-size: 62.5%;  /* ! what is % ???? */
+  overflow-x: hidden; /* ! what  ???? */
+  scroll-behavior: smooth; /* ! what ???? */
+}
+
+body{
+  /* border: 1px solid red; */
+  background-color: #111111;
+  padding-left: 30rem;
+
+  /* margin-bottom: 3000PX; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+    /* ! rasara  */
+}
+
+.main{
+  /* border: 2px solid green;     */
+  padding:1rem 5% ;   /* !  */
+  min-height: 100vh; /* !  */
+}
+
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.navbar a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+}
+
+.main-title{
+  font-size: 60px;
+  margin-bottom: 40PX;
+}
+
+/* header style ################## */
+header {
+  /* border: 1px solid blue; */
+  position: fixed;  /* !  */
+  top: 0;
+  left: 0; /* !  */
+  bottom: 0;
+
+  background-color: #262626;
+  display: flex;
+  /* flex-direction: column; */
+  flex-flow: column;  /* ! මේ flex-direction: column; ### */
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000; /* !header ### */   
+  padding: 8rem 2rem;
+  width: 30rem;
+  text-align: center;
+}
+
+
+header .logo {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+header .logo span , header .logo span i{
+  text-transform: uppercase;  
+  color: #F8CE1A; /* ! */
+}
+
+header .navbar a {
+display: block;  /* ! */
+font-size: 2rem;
+color: #fff;
+margin: 2rem 0;
+}
+
+header .navbar a:hover {
+ letter-spacing: .2rem;  /* ! */
+ color: #F8CE1A;
+  }
+
+
+  header .follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  header .follow .top{
+    display: flex;
+    /* column-gap: 50px; */
+  }
+
+  header .follow .bottom{
+    display: flex;
+    /* column-gap: 50px; */
+  }
+
+  header .follow a{
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0 .7rem;
+  }
+
+  header .follow a:hover{
+    color:#F8CE1A;
+  }
+
+/* ##### */
+  #menu-bars {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10000;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;  /* ! not show in desktop */
+  }
+
+
+
+  /* cursor moving ###  */
+  /* small dot circle */
+.cursor-1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 1rem;
+  width: 1rem;
+  background-color: #F8CE1A;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+
+/* small dot circle expand when hover a tags */
+.cursor-1.active{
+height: 7rem;
+width: 7rem;
+opacity: .3;
+}
+
+ /* big border circle */
+.cursor-2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 4rem;
+  width: 4rem;
+  border: .1rem dashed #F8CE1A;
+  /* background-color: var(--main-color); */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10000;
+  transition: .3s linear;
+}
+
+.cursor-2.active{
+ display: none;
+  }
+  
+
+
+
+/* media queries ########### */
+@media (max-width:991px) {
+
+html{
+    font-size: 55%;
+}
+
+body{
+   padding:0;
+}
+
+#menu-bars {
+  display: initial;  /* ! none එකේ විරුද්ද එක  */
+}
+header {
+  left: -120%;  /* ! මේ screen size එකේදී -120 ගිහින් hide කරන්නේ අර transform එක ගන්න..  */
+}
+
+header.active {
+  left: 0%; 
+}
+
+.cursor-1, .cursor-2 {
+  display: none;
+}
+}
+  
+/* media queries ########### */
+@media (max-width:450px) {
+
+  html{
+      font-size: 50%;
+  }
+
+  header {
+    width: 100%; /* !header is full screen size here */
+  }
+  
+  }
+    
+/* end menu section styles ########################## */
+
+
+
+
+
+/* Iam  section styles ########################## #######*/
+
+.iam-section{
+/* border: 2px solid red; */
+display: flex;
+flex-direction: column;
+padding: 50px 0 0 0 ;
+margin-bottom: 100PX;
+}
+
+.iam-section-top{
+  /* border: 2px solid green; */
+  display: flex;
+  border: ;
+  display: flex;
+}
+
+.iam-section-bottom{
+  /* border: 2px solid orange; */
+}
+
+.iam-section-top .right h3:nth-child(2) {
+  color: #F8CE1A;
+  padding-bottom: 40px;
+}
+
+.iam-section-top .right{
+  padding: 20px;
+}
+
+.iam-section-top .right .text {
+ font-size: 20px;
+ font-weight: 300;
+}
+
+.iam-section-top .right a {
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #F8CE1A;
+  color: #111111;
+  font-weight: 500;
+  padding: 10px 20px;
+  display: inline-block;
+  text-align: center;
+ }
+
+ .iam-section-top .right{
+display: flex;
+flex-direction: column;
+justify-content: space-around ;
+ }
+ 
+ .iam-section-bottom{
+  margin-top: 50PX;  
+  background-color: #262626;
+  padding: 20px 10px;
+ }
+ .iam-section-bottom li{
+  font-size: 20px;
+  padding-left: 10px;
+  color: gainsboro;
+  list-style: none;
+ }
+
+ @media  (max-width:750px) {
+  .iam-section .iam-section-top {
+    display:flex;
+    flex-direction: column;
+    /* background-color: #4070f4;    */
+  }
+
+  .iam-section .iam-section-top .left ,  .iam-section .iam-section-top .left img {
+    width: 100%;
+  }
+ }
+
+
+
+
+
+
+
+
+/* right-content2 ################################### */
+
+.right-content2{
+  /* background-color: brown; */  
+  /* border: 2px solid brown; */
+  /* height: 100vh;   */
+}
+
+
+.container{
+  position: relative;
+  /* max-width: 500px; */
+  width: 90%;
+  /* background: #fff;   */ /* !changed */  
+  /* margin: 0 15px; */
+  /* padding: 10px 20px; */
+  border-radius: 7px;
+}
+
+.container .skill-box{
+/* background-color: aqua; */
+  width: 100%;
+  margin: 25px 0;
+  
+}
+
+/* titile ## */
+.skill-box .title{
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* skill bar ##  */
+.skill-box .skill-bar{
+  height: 10px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 2px;
+  background: #47494A;
+}
+
+/* all skill bar fill & HTML ## */
+.skill-bar .skill-per{
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 80%;  /*! HTML fill ## */
+  border-radius: 10px;
+  background: #F8CE1A ;  /* fill color ## */
+  animation: progress 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+.skill-per.css{
+  width: 60%; /*! css fill ## */
+  animation-delay: 0.1s;
+}
+.skill-per.javascript{
+  width: 30%; /*! js fill ## */
+  animation-delay: 0.2s;
+}
+.skill-per.tailwind{
+  width: 50%;  /*! tailwind fill ## */
+  animation-delay: 0.3s;
+}
+.skill-per.boostrap{
+  width: 30%;  /*! tailwind fill ## */
+  animation-delay: 0.4s;
+}
+
+.skill-per.react{
+  width: 0%;  /*! tailwind fill ## */
+  animation-delay: 0.5s;
+}
+
+.skill-per.Wordpress{
+  width: 60%;  /*! tailwind fill ## */
+  animation-delay: 0.6s;
+}
+
+.skill-per.figma{
+  width: 60%;  /*! tailwind fill ## */
+  animation-delay: 0.7s;
+}
+
+
+
+
+@keyframes progress {
+  0%{
+      width: 0;
+      opacity: 1;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+
+
+/* tooltip  ##  */
+.skill-per .tooltip{
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 500;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #4070f4;
+  z-index: 1;
+}
+
+/* tooltip එකේ පහල ත්‍රිකෝණ උල් කෑල්ල  ##  */
+.tooltip::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+  background-color: #4070f4;
+  transform: translateX(-50%) rotate(45deg);
+
+}
+
+.right-content2 .myname {
+  color: #F8CE1A; 
+  font-size: 40px;  
+  text-align: left;
+}
+
+/* logo icon brand ###  */
+.tech-icon{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content:left;
+  margin-top: 100px;
+  column-gap: 100px;
+  row-gap: 50px;
+  flex-wrap: wrap
+}
+.tech-icon img {
+  width: ;
+}
+ 
+
+
+/* timeline ## */
+/* Time line ######################  ####################### */
+
+.timeline { 
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.timeline-container {
+  /* border: 1px solid red; */
+  /* padding: 10px  50px 10px  0px; */
+  position: relative;
+  width: 50%;
+  
+  animation: movedown 1s linear forwards ;
+  opacity: 0;
+}
+
+/* ! rasara add new ###  */
+.timeline-container.left-container{
+  padding: 10px  50px 10px  0px;
+}
+
+.timeline-container.right-container{
+  padding: 10px  0px 10px  50px;
+}
+
+@keyframes movedown {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* container appear වෙන animation time dealy අවශ්‍ය ලෙස change කරගන්න.. ### */
+.timeline-container:nth-child(1){
+  animation-delay: 0s;
+}
+.timeline-container:nth-child(2){
+  animation-delay: 1s;
+}
+.timeline-container:nth-child(3){
+  animation-delay: 2s;
+}
+.timeline-container:nth-child(4){
+  animation-delay: 3s;
+}
+.timeline-container:nth-child(5){
+  animation-delay: 4s;
+}
+.timeline-container:nth-child(6){
+  animation-delay: 5s;
+}
+.timeline-container:nth-child(7){
+  animation-delay: 6s;
+}
+
+.text-box{
+  padding: 20px 30px;
+  border: none;
+  outline: none;
+  background-color:white ;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.left-container{
+  left: 0; /* ! key point  */
+}
+
+.right-container{
+  left: 50%;   /* ! key point  */
+}
+
+/* logo bullet image positions ##  */
+.timeline-container img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+  } 
+
+ .right-container img{
+  left: -20px; 
+  }
+  
+
+
+  /* adding a vertical line to  timeline div .. ##  */
+.timeline::after{
+  background-color: yellow;
+  content: " ";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1; /* ! delateable */
+  animation: moveline 5s linear forwards ; /* ! adjust as you prefer  */
+}
+
+@keyframes moveline {
+  0% { height: 0;  }
+  100% {height: 100%;}
+}
+
+
+
+/* getting to same lavel titile in text box ## */
+.text-box h2 {
+  font-size: 18px;
+  font-weight: 600;  
+  color: #181818;
+}
+.text-box small {  
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;  
+  color: #128ACE;
+}
+.text-box p {  
+  font-size: 16px;
+  font-weight: 500
+  ;  
+  color: #262626;
+}
+
+
+
+/* arrow symbol part ##  */
+.left-container-arrow { 
+  position: absolute;
+  top: 28px;   /* ! adjust as you prefer  */
+  z-index: 1; 
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid white;
+  right: -15px;
+
+  /* ! method 2  */
+  /*
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  right: -10px;
+  rotate: 45deg; 
+  */
+}
+
+/* arrow symbol part ##  */
+.right-container-arrow { 
+  position: absolute;
+  top: 28px;   /* ! adjust as you prefer  */
+  z-index: 1; 
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid white;
+  left: -15px;
+
+   /* ! method 2  */
+  /*
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  right: -10px;
+  rotate: 45deg; 
+  */
+}
+
+
+
+/* responsive ###  */
+@media (max-width:600px){
+
+
+  /* ! rasara cahnge  */
+  .timeline-container.left-container , .timeline-container.right-container{
+    padding: 10px  0px 10px  50px;
+  }  
+
+
+
+  .timeline{
+    margin:50px auto;
+  }
+
+  /* timeline-bar එක left එකට ගැනීම ## */
+  .timeline::after{
+    left: 32px;
+  } 
+
+  .timeline-container{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;    
+  }
+
+  /* right box එක left එකට ගැනීම ###  */
+  .right-container{
+    left: 0;
+  }
+
+
+
+  .text-box{
+    font-size: 13px;
+  }
+  .text-box small {
+    margin-bottom: 10px;
+  }
+  
+
+  /* postion image logo ##  */
+  .left-container img, .right-container img{
+    left: 10px;
+  }
+
+  /* arrow changing ##  */
+  .left-container-arrow, .right-container-arrow{
+    border-right: 15px solid white;
+    border-left: 0;
+    left:-15px
+  }
+ 
+}
+
+
+
+
+/* education section ########################### */
+
+.right-4-img{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.right-4-img img{ 
+  width:50%; 
+}
+
+
+
+
+
+
+
+
+/* ########### Password section ####  */
+
+
+.password-section {
+  /* background-color: green; */
+  height:100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-section h1 {
+  color: #F8CE1A;
+  font-size: 50px;
+}
+
+.password-section button{
+  background-color: #F8CE1A;
+  color: #181818;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.password-section button:hover{
+  background-color: #181818;
+  color: #F8CE1A;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.password-section  .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px 20px;
+}
+
+.password-section  .container label {
+font-size: 20px;
+}
+
+.password-section  .container input {
+  padding: 10px 5px;
+  margin-bottom: 20px;
+  color: blue;
+  font-size: 18px;
+}
+
+.password-section  .container #message{
+  padding: 10px 50px;
+  margin-bottom: 20px;
+  color: greenyellow;
+  font-size: 18px;
+}
+
+.password-section  .container #message-2{
+  padding: 10px 50px;
+  margin-bottom: 20px;
+  color: orangered;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+/* untill password main section Hidden */
+#password-hidden-id{
+  display: none;
+  /* background-color: #128ACE; */
+}
+
+@media (max-width:700px){
+  .password-section h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+
+
+/* ############ Button #################  */
+
+.download-btn{
+  outline: none;
+  border: none;
+  color: black;
+  /* display: flex; */
+  cursor: pointer;
+  padding: 15px 15px;
+  border-radius : 6px;
+  align-items: center;
+  white-space: nowrap;
+  background: #F8CE1A;
+  transition: all 0.2s ease;
+}
+
+.download-btn .text{
+  color: black;
+  background: #F8CE1A;
+  font-weight: 600;
+}
+
+.download-btn:hover{
+  background: #F8CE1A;
+}
+
+
+.download-btn.timer{
+  color: #fff;
+  background: none;
+  transition: none;
+  font-size: 1.6rem;
+  pointer-events: none;
+}
+.download-btn.timer b{
+  color: #F8CE1A;
+  padding: 0 8px;
+  border: 1px solid #F8CE1A;
+}
+.download-btn .icon{
+  font-size: 2rem;
+}
+.download-btn .text{
+  font-size: 1.5rem;
+  padding-left: 10px;
+}

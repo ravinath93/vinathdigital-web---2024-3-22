@@ -1,0 +1,1005 @@
+
+/* font family ###  */
+*{  
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  font-family: 'poppins', sans-serif; 
+  font-size: 18px;  
+  color: #CCCACA;
+  font-size: 18px;  
+  }
+
+
+
+/* section header ################# */
+.hero{
+min-height: 50vh;
+width: 100%;
+/* max-width: 1440px; */
+background-image: linear-gradient(rgba(107, 72, 72, 0.5),rgba(24,24,24,0.9)), url(images/contactus-bg-1.jpg); 
+background-position: top;
+background-size: cover;
+position:sticky; /* ! change relative to sticky, reason: button hover animation */
+
+display: flex;
+flex-direction: column;
+/* justify-content:space-between; */
+align-items: center;
+}
+
+
+/* ###################################### */
+.header{
+  background: #181818; 
+  /* background: rgb(227,179,7);
+background: linear-gradient(90deg, rgba(227,179,7,1) 0%, rgba(0,0,0,0.8) 35%); */
+  position: fixed;
+  top: 0;  /* ! flex */
+  width: 100%;
+  z-index: 10000;  /* ! */
+}
+.header nav{
+  position: relative;
+  display: flex;
+  /* max-width: calc(100% - 200px); */
+  margin: 0 auto;
+  height: 80px;  
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1440px;
+  /* background-color: goldenrod; */
+}
+nav .content{
+  display: flex;
+  align-items: center;
+}
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+  align-items: center;
+}
+
+/* remove underlines in all a tags in nav menu  */
+a {
+  text-decoration: none;
+}
+
+
+/* ! change  .content to nav   */
+nav .logo img{
+ width: 100px;
+}
+.content .links li{
+  list-style: none;
+  line-height: 70px;
+}
+.content .links li a,
+.content .links li label{
+  font-family: 'oswald', sans-serif; 
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px 15px;
+  margin-right: 5px;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+}
+
+.content .links li .fa-angle-down{
+  color: #fff;
+  transition: all 0.5s ease;
+}
+.content .links li label{
+  display: none;
+}
+
+.content .links li a:hover .fa-angle-down{
+  background: #fff;
+  color: #181818;
+}
+
+.content .links li a:hover,
+.content .links li label:hover
+{
+  background:white;
+  color: #181818;
+}
+.header .search-icon,
+.header .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+
+.header .menu-icon{
+  display: none;
+}
+
+.header .close-icon{
+  display: none;
+}
+
+.header #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+}
+
+.header .search-box{
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.header #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #181818;
+  padding: 0 100px 0 15px;
+}
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+.search-box .go-icon{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  background: #181818;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.header input[type="checkbox"]{
+  display: none;
+}
+
+/* Dropdown Menu code start */
+.content .links ul{
+  position: absolute;
+  background: #181818;  /* !Dropdown list color */
+  top: 80px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.content .links li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.content .links ul li a{
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 0px!important;
+}
+.content .links ul ul{
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 8px);
+}
+.content .links ul li{
+  position: relative;
+}
+.content .links ul li:hover ul{
+  top: 0;
+}
+
+
+/* header button ## */
+nav ul button{
+  font-family: 'oswald', sans-serif;
+  background-color: #128ACE; 
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 10px;
+  margin-left:35px ; 
+  outline: none;
+  transition: 0.5s;
+}
+
+nav ul button:hover {
+  background-color: white;
+  color: #128ACE;
+}
+
+
+
+/* Responsive code start */
+@media screen and (max-width: 1250px){
+  .header nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+  .content .links li a{
+    padding: 8px 13px;
+  }
+  .header .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .header .search-box input{
+    padding: 0 100px 0 15px;
+  }
+}
+
+@media screen and (max-width: 1120px){
+
+  .header{
+    position: static;
+  }
+
+  /* ! new changed  */
+  .header nav{
+    width: 100%;
+  }
+  
+  .header .menu-icon{
+    display: block;
+  }
+
+  .header .close-icon{
+    display: block;
+    margin-left: 45px;
+    margin-top: 20px;
+  }
+
+  /* ! cros symbole ## */
+  .header #show-menu:checked ~ .menu-icon i::before{
+    /* content: "\f00d";  */
+  }
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #181818;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 350px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  nav #show-menu:checked ~ .content .links{
+    left: 0%;
+  }
+  .content .links li{
+    margin: 15px 20px;
+  }
+  .content .links li a,
+  .content .links li label{
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+  .content .links li a.desktop-link{
+    display: none;
+  }
+
+  /* dropdown responsive code start */
+  .content .links ul,
+  .content .links ul ul{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    max-height: 0px;
+    overflow: hidden;
+  }
+  .content .links #show-features:checked ~ ul,
+  .content .links #show-services:checked ~ ul,
+  .content .links #show-items:checked ~ ul{
+    max-height: 100vh;
+  }
+  .content .links ul li{
+    margin: 7px 20px;
+  }
+  .content .links ul li a{
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 0px!important;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .header nav{
+    padding: 0 10px;
+  }
+
+  /* ! change  .content to nav   */
+  nav  .logo a{
+    font-size: 27px;
+  }
+
+  .header .search-box{
+    max-width: calc(100% - 70px);
+  }
+  .header .search-box .go-icon{
+    width: 30px;
+    right: 0;
+  }
+  .header .search-box input{
+    padding-right: 30px;
+  }
+}
+
+/* .dummy-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  z-index: -1;
+  padding: 0 20px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.dummy-text h2{
+  font-size: 45px;
+  margin: 5px 0;
+} */
+
+/* ########## Active menu ######################################## */
+.content .links li.active a , .content .links li.active .fa-angle-down {
+  background-color: var(--yellowColor); 
+  /* height: 50px; */
+  color: black;  
+}
+
+.content .links li.active a:hover {
+  background-color: white;
+  color: ;
+}
+/* ########## x ######################################## */
+
+
+
+
+/* hero content section ###############  */
+
+.hero-container{
+  /* border: 2px solid rebeccapurple; */
+  width: 90%;
+  max-width: 1440px;
+  /* height: 50vh; */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: -1; /* ! mobile menu hidden */
+  margin-top: 130px;
+  position: absolute;  /* ! RASARA ADD  */
+  }
+
+
+/* hero-container-left ###############  */
+.hero-container-left{
+text-align: center;
+width: 100%;
+}
+
+.hero-container-left h1,h3 {
+  font-family: 'oswald', sans-serif; 
+}
+
+.hero-container-left h1{
+  font-size: var(--h1oswald);
+  color:var(--yellowColor);
+}
+
+.hero-container-left h3{
+  color: white;
+  font-size: var(--h3oswald);
+  font-weight: var(--h3oswaldRegular);
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.hero-container-left p{
+ /* line-height: 23px; */
+ margin-left: 10px;
+}
+
+
+
+
+
+
+/* hero section responsive ### #### */
+@media screen and (max-width: 880px){
+
+  .hero-container{
+    /* background-color: aqua; */
+    flex-wrap: wrap;
+  }
+  .hero-container-left{
+    /* margin-top: 70px; */
+    width: 100%; 
+    background-color: ;
+  }  
+  
+}
+
+
+/* mobileresponsiv ###  */
+@media screen and (max-width: 450px) {
+
+  .hero-container-left{
+  
+    margin-top: ;
+  }
+
+  .hero-container-left button{
+    width: 90%;
+  }
+
+  .hero-container-left h1{
+    font-size: 40px;
+    line-height:  45px;
+  }
+  .hero-container-left h3{
+    font-size: 30px;
+    line-height:  35px;
+    margin-top:15px;
+  }
+
+  .hero-container-left p{
+    font-size: 16px;
+  }
+
+  .hero-container-left button{ 
+   font-size: 18px;
+  }
+
+  nav .content .links a, 
+  .content .links li label, 
+  .content .links ul li a,
+  nav ul button{
+    font-size: 18px;
+  } 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* service form section ##################################################### */
+
+
+/* මැද්දට center කරලා තියෙන්නේ මේකෙන්  ### */
+.services-form-section{
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 100px;
+  /* min-height: 100vh; */
+  overflow: hidden; /* ! important overflow hide */  
+  background-color: #161616;
+  width: 100%;
+  padding: 150px 0;
+  /* position: relative; */
+}
+
+/* ! what is this #  */
+::selection{
+  color: #fff;
+  background: #F8CE1A;
+}
+
+/* container  size , bg ### */
+.container{
+  width: 450px;
+  background: #1E1E1E;
+  text-align: center;
+  border-radius: 5px;
+  padding: 30px 35px 10px 35px; 
+}
+
+
+
+
+      
+/* form titile ### */
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
+/* form එක තියෙන්නේ මේ .form-outer container එක ඇතුලේ.. ### */
+.container .form-outer{
+  width: 100%;
+  overflow: hidden; /* ! important #  */ 
+}
+
+/* form එක ඇතුලේ තියෙන page කියන  container 4ම width එක 400% ### */
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+
+/* එක page එකක් 400% න් 4න් එකක් ඒ කියන්නේ 100% කියල (width: 330px; වගේ තමයි ) ## */
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+
+/* form එකේ page වල title ### */
+.form-outer form .page .title{
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* input field div එක ##  */
+.form-outer form .page .field{ 
+  width: 330px;
+  height: 45px;
+  margin: 45px 0 10px 0;
+  display: flex; /* ! label & input #  */
+  position: relative;
+}
+
+
+/* form input label ##  */
+form .page .field .label{  
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+
+/* form input ##  */
+form .page .field input{  
+  height: 100%;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+/* drop down selection ##  */
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500; 
+}
+
+form .page .field select option{
+  background: white;
+  width: 280px;
+  color: #161616;
+  font-size: 14px;  
+  border: none;  
+  outline: none;
+}
+
+/* buttons ##  */
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #F8CE1A;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #1E1E1E;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+/* buttons Hover ##  */
+form .page .field button:hover{
+  background: #128ACE;
+  color: white;
+}
+
+form .page .btns button{
+  margin-top: -20px!important;
+}
+
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+
+
+/* progress bar ############# */
+.container .form-progress-bar{
+  display: flex;
+  margin: 40px 0;
+  user-select: none; /* ! #  */
+}
+
+.container .form-progress-bar .step{   
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+/* progress-bar title ##  */
+.container .form-progress-bar .step p{  
+  font-weight: 500;
+  font-size: 18px;  
+  margin-bottom: 8px;
+}
+
+/* bullet ##  */
+.form-progress-bar .step .bullet{
+  height: 35px;
+  width: 35px;  
+  background-color: #fff;
+  border: 2px solid #fff;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 32px; /* ! rasara change 25 to 32   */
+ 
+}
+
+/* js - active bullet ##  */
+.form-progress-bar .step .bullet.active{
+  border-color: #F8CE1A;
+  background: #F8CE1A;
+}
+
+/* step එකේ අංකය ##  */
+.form-progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1E1E1E;
+  
+}
+
+.form-progress-bar .step .bullet.active span{
+  display: none;
+}
+
+/* progress-bar line ##  */
+.form-progress-bar .step .bullet:before,
+.form-progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #fff;
+}
+
+/* progress-bar line Active ##  */
+.form-progress-bar .step .bullet.active:after{
+  background: #F8CE1A;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.form-progress-bar .step:last-child .bullet:before,
+.form-progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.form-progress-bar .step p.active{
+  color: #F8CE1A;
+  transition: 0.2s linear;
+}
+.form-progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.form-progress-bar .step .check.active{
+  display: block;
+  color: #181818;
+}
+
+/* fonts settings ##  */
+.services-form-section .container header{  
+  font-family: 'oswald', sans-serif; 
+  color:#F8CE1A;
+}
+
+.form-outer input::placeholder {
+  color: gray;
+}
+
+.form-outer input , select{
+  color:#1E1E1E;
+}
+
+
+/* ! rasara add after submit thanks ##  */
+.hidden {
+  display: none;
+}
+
+
+
+/* get in touch form ##################################################  */
+
+
+  .getInTouch-form .container{
+  width: 350px;
+  background-color:#1E1E1E;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: left;
+  }
+  
+  .getInTouch-form .container input{ 
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid gainsboro;
+  margin-bottom: 20px;
+  font-size: 16px;
+  outline: none;
+  background-color: ;
+  border-radius: 5px; 
+  }
+  
+  .getInTouch-form .container input:focus{
+        
+  }
+  
+  .btn{
+  border: none !important;
+  cursor: pointer;
+  background-color: #F8CE1A;
+  color: #181818;
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  padding: 14px;
+  border-radius: 5px;
+  }
+  
+  .btn:hover{
+    background-color: #128ACE;
+    color: white;
+  }
+
+  /* Fonts settings  */
+  .getInTouch-form .container h3 {
+    font-size: 35px;
+    color: #F8CE1A;
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+
+  .getInTouch-form .container input{
+    color: #181818;
+  }
+
+  .getInTouch-form label p{
+    text-align: left;    
+  }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  /* google-map-section #################################  */
+
+
+
+  .google-map-section {
+    background-color: #1E1E1E;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 50px solid #F8CE1A;
+    padding: 100px 0 150px 0 ;
+  }
+
+  .google-map-container {
+    /* border: 2px solid green; */
+    width: 90%;
+    max-width: 1440px;
+
+    display: flex; 
+    flex-direction: row;   
+    justify-content: space-between;
+    align-items: center;
+    /* column-gap: 5%; */
+  }
+
+  .google-map-container .map{
+    width: 65%;
+  }
+  .google-map-container .facbook-container-1{
+    /* border: 2px solid blue; */
+    width: 30%;
+  }
+
+
+
+
+
+
+  
+  /* responsive ######################## */
+
+  @media screen  and (max-width:910px){
+    .services-form-section {
+         
+      flex-direction: column ;
+      align-items: center;
+    }
+    .getInTouch-form{
+      width: 100%;
+      margin-top: 50px;
+     display: flex;
+     justify-content: center;
+      /* border: 2px solid red ;  */
+    }
+    .getInTouch-form .container{
+      
+    }
+
+    .services-form-section .container{
+      width: 350px;
+      background: #1E1E1E;
+      text-align: center;
+      border-radius: 5px;
+      padding: 30px 35px 10px 35px;      
+      }
+
+    .container .form-progress-bar .step p {      
+      font-size: 14px;
+    }
+      
+    form .page .field .label {
+      position: absolute;
+      top: -30px;
+      font-weight: 500;
+      font-size: 16px;
+  }
+
+  .form-outer form .page .title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+form .page .field input {
+  width: 84%;
+}
+form .page .field select {
+  /* background-color: red; */
+  width: 100%;
+}
+
+/* drop down selection ##  */
+form .page .field select{
+  width: 280px;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;  
+}
+
+form .page .field select option{
+  background: white;
+  width: 280px;
+  color: #161616;
+  font-size: 14px;  
+}
+
+form .page .field button{
+  width: 40%;  
+  height:50px;
+  border-radius: 3px;
+  padding: 10px 20px;
+
+  border: none;
+  background: #F8CE1A;
+  margin-top: -20px;
+
+  color: #1E1E1E;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+/* google map anf facebook##  */
+.google-map-container .map{
+  width: 90%;
+}
+.google-map-container .facbook-container-1{
+  /* border: 2px solid blue; */
+  width: 90%;
+}
+
+.google-map-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 50px;
+}
+
+  
+}
+
+
+ 
